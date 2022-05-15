@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 import Logo from '../logo'
 const StyledHeader = styled.div`
       display:flex;
+      margin:4rem 6rem;
 ` 
 const ListItems = styled.ul`
     display: flex;

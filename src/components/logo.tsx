@@ -18,8 +18,8 @@ const Logo = styled(Link)`
     position: absolute;
     width: 25px;
     transform: rotate(67deg);
-    left: 180px;
-    top: 15px;
+    left: 164px;
+    top: 31px;
     }
     strong{
         color:#37df9e;

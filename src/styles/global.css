@@ -3,7 +3,7 @@ body{
     font-family: Sulphur Point;
     margin: 0;
     background-color: #163529;
-    /* background-image: url('../images/noise.png'); */
+    background-image: url('../images/pix.png');
 }
 ::selection{
     background-color: #37df9e;

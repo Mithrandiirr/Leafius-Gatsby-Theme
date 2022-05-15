@@ -4,11 +4,11 @@ import Header from '../header';
 import styled from '@emotion/styled';
 import '../../styles/global.css'
 const LayoutDiv = styled.div`
-       max-width: 1320px;
+      max-width: 1920px !important;
        width: 100%;
-       margin-right: auto;
-    margin-left: auto;
-    margin: 4rem 6rem;
+       margin-left: auto;
+        margin-right: auto;
+    /* margin: 4rem 6rem; */
 `
 type LayoutProps = {
     children: React.ReactNode;

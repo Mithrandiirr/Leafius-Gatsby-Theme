@@ -4,18 +4,23 @@ import { StaticImage } from 'gatsby-plugin-image'
 
 const Container = styled.div`
     color:white;
-    margin-top:6rem;
+    margin:6rem 6rem;
+    h1 {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size:2rem;
+    }
 `
 const AboutMe = styled.div`
-display:grid;
-    grid-template-columns: repeat(7,minmax(0,1fr));
+display:flex;
+   flex-direction: row;
+   flex-wrap:wrap;
 `
 const TextGrid = styled.div`
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     font-weight: 300;
-    grid-column-start: 1;
-    grid-column-end: 5;
-
+    flex: 0.6 1 0;
+    line-height: 1.6;
 `
 const JAMStack = styled.span`
     &:before{
@@ -23,7 +28,7 @@ const JAMStack = styled.span`
     position: absolute;
     width: 107px;
     height: 14px;
-    top: 274px;
+    top: 288px;
     z-index: -1;
     background: rgba(55, 223, 158, 0.64);
     }
@@ -32,23 +37,25 @@ const FrontEnd = styled.span`
     &:before{
     content: '';
     position: absolute;
-    width: 116px;
-    height: 10px;
-    top: 312px;
-    left: 168px;
+    width: 120px;
+    height: 11px;
+    top: 343px;
+    left: 158px;
     z-index: -1;
     background: rgba(161, 146, 251, 0.64);
 }
 `
 const PictureGrid = styled.div`
-    width: 280px;
-    margin: -4rem 3rem;
-    grid-column-end: 7;
+    width: 100%;
+    margin: -4rem 0px;
+    justify-content: end;
+    text-align:end;
+  
     &:before{
     content: '';
     background-color: #37DF9E;
-    width: 271px;
-    height: 317px;
+    width: 355px;
+    height: 413px;
     position: absolute;
     transform: translate(17px, 7px);
     }
@@ -59,7 +66,7 @@ const SocialIcons = styled.div`
     margin: 1rem 0;
     display: flex;
     gap: 8%;
-    justify-content: center;
+    justify-content: end;
     fill: #668b7c;
     svg{
         &:hover{
@@ -68,6 +75,12 @@ const SocialIcons = styled.div`
     }
 }
 `
+const Div = styled.div`
+        width: 100%;
+    flex: 0.4 1 0;
+    position: relative;
+    max-width: 100%;
+`
 function About() {
   return (
     <Container className='about-me'>
@@ -75,10 +88,12 @@ function About() {
     <AboutMe>
         <TextGrid>
         My name is El Yaakoubi Mohammed. I’m <JAMStack>JAMStack</JAMStack> and <FrontEnd>Front-end</FrontEnd> developer.
-<br />I build user interfaces and eCommerce stores. I also like practising pixel art in my free time.
+<br />I build user interfaces and eCommerce stores. I also build full-stack applications !
+<br /><br />I am currently learning more about MERN-Stack and JAMStack. I like practising pixel art in my free time .
         </TextGrid>
+        <Div>
         <PictureGrid>
-            <StaticImage src='../images/mee.png' alt='Picture' />
+            <StaticImage src='../images/mem.png' alt='Picture' />
             <SocialIcons>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
 
@@ -91,7 +106,7 @@ function About() {
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/></svg>
             </SocialIcons>
         </PictureGrid>
-       
+        </Div>
       
 
     </AboutMe>
