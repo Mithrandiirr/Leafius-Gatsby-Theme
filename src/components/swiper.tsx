@@ -4,10 +4,16 @@ import EmblaCarousel from './swiper/swiper'
 
 const SwiperSection = styled.div`
     margin: 4rem 6rem;
+     @media screen and (max-width:575px) {
+        margin:4rem 4rem;
+          }
+          @media screen and (max-width:440px) {
+        margin:4rem 1rem;
+          }
     h1{
         color:white;
         text-transform:uppercase;
-        font-size: 1.8rem;
+        font-size: 2rem;
         letter-spacing: 5px;
     }
 `

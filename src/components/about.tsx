@@ -5,6 +5,12 @@ import { StaticImage } from 'gatsby-plugin-image'
 const Container = styled.div`
     color:white;
     margin:6rem 6rem;
+    @media screen and (max-width:575px) {
+        margin:4rem 4rem;
+          }
+          @media screen and (max-width:440px) {
+        margin:4rem 1rem;
+          }
     h1 {
     text-transform: uppercase;
     letter-spacing: 5px;
@@ -15,34 +21,147 @@ const AboutMe = styled.div`
 display:flex;
    flex-direction: row;
    flex-wrap:wrap;
+
 `
 const TextGrid = styled.div`
     font-size: 1.8rem;
     font-weight: 300;
     flex: 0.6 1 0;
     line-height: 1.6;
+    @media screen and (max-width:1123px)
+    {
+        flex: 0.5 1 0;
+    }
+    @media screen and (max-width:940px) {
+            flex: 1;
+    }
 `
 const JAMStack = styled.span`
+position: relative;
     &:before{
         content: '';
     position: absolute;
-    width: 107px;
+    width: 112px;
     height: 14px;
-    top: 288px;
+    top: 10px;
     z-index: -1;
-    background: rgba(55, 223, 158, 0.64);
+    background: rgb(168 171 5 / 63%);
+    @media screen and (max-width:1268px)  {
+        top: 58px;
+    left: -509px;
     }
+    @media screen and (max-width:1123px) {
+        top: 12px;
+    left: 0px;
+    }
+    @media screen and (max-width:844px) {
+        top: 58px;
+    left: -509px;
+    }
+    @media screen and (max-width:714px) {
+        top:11px;
+        left:0;
+    }
+    
+    @media screen and (max-width:449px) {
+        top: 58px;
+    left: -195px;
+    }
+    @media screen and (max-width:440px) {
+        top:11px;
+        left:0;
+    }
+    @media screen and (max-width:353px) {
+        top: 58px;
+    left: -195px;
+    }
+    @media screen and (max-width:333px) {
+        top:11px;
+        left:0;
+    }
+    @media screen and (max-width:305px) {
+        top: 58px;
+    left: -195px;
+    }
+    @media screen and (max-width:240px) {
+        top:11px;
+        left:0;
+    }
+    @media screen and (max-width:188px) {
+        display:none;
+    }
+}
+
+
 `
 const FrontEnd = styled.span`
+position: relative;
     &:before{
-    content: '';
+        content: '';
     position: absolute;
     width: 120px;
-    height: 11px;
-    top: 343px;
-    left: 158px;
+    height: 15px;
+    top: 10px;
+    /* left: 158px; */
     z-index: -1;
-    background: rgba(161, 146, 251, 0.64);
+    background: rgb(91 79 193 / 80%);
+    @media screen and (max-width:1123px)
+    {
+        top: 55px;
+    left: -384px;
+    }
+    @media screen and (max-width:983px) {
+        top: 12px;
+    left: 0;
+    }
+    @media screen and (max-width:940px) {
+        top: 58px;
+    left: -697px;
+    }
+    @media screen and (max-width:901px) {
+        top: 12px;
+    left: 0;
+    }
+    @media screen and (max-width:674px) {
+        top: 56px;
+    left: -383px;
+    }
+    /* @media screen and (max-width:674px) {
+        top: 56px;
+    left: -383px;
+    } */
+    @media screen and (max-width:587px) {
+        top: 12px;
+    left: 0;
+    }
+    
+    @media screen and (max-width:575px) {
+        top: 56px;
+    left: -383px;
+    }
+    @media screen and (max-width:523px) {
+        top: 12px;
+    left: 0;
+    }
+    @media screen and (max-width:440px) {
+        top: 56px;
+    left: -383px;
+    }
+    @media screen and (max-width:427px) {
+        top: 12px;
+    left: 0;
+    }
+    @media screen and (max-width:333px) {
+        top: 56px;
+        left: -219px;
+    }
+    @media screen and (max-width:291px) {
+        top: 56px;
+        left: -175px;
+    }
+    @media screen and (max-width:227px) {
+        display:none;
+    }
 }
 `
 const PictureGrid = styled.div`
@@ -50,7 +169,16 @@ const PictureGrid = styled.div`
     margin: -4rem 0px;
     justify-content: end;
     text-align:end;
-  
+   @media screen and (max-width: 940px)
+   {
+    width: 100%;
+    margin: 0rem 0px;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    -webkit-justify-content: end;
+    justify-content: center;
+    text-align: center;
+   }
     &:before{
     content: '';
     background-color: #37DF9E;
@@ -58,6 +186,10 @@ const PictureGrid = styled.div`
     height: 413px;
     position: absolute;
     transform: translate(17px, 7px);
+    @media screen and (max-width:575px) {
+        width:0;
+        height:0;
+    }
     }
 
     
@@ -68,6 +200,11 @@ const SocialIcons = styled.div`
     gap: 8%;
     justify-content: end;
     fill: #668b7c;
+    @media screen and (max-width:940px)
+    {
+    gap: 5%;
+    justify-content: center;
+    }
     svg{
         &:hover{
         fill:#37DF9E;
@@ -80,6 +217,15 @@ const Div = styled.div`
     flex: 0.4 1 0;
     position: relative;
     max-width: 100%;
+    @media screen and (max-width:1123px)
+    {
+        flex: 0.5 1 0;
+    }
+    @media screen and (max-width:940px)
+    {
+        min-width: 100%;
+    }
+    
 `
 function About() {
   return (
