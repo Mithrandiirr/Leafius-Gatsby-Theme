@@ -9,9 +9,12 @@ const LayoutDiv = styled.div`
        width: 100%;
        margin-left: auto;
         margin-right: auto;
-
+        img{
+        image-rendering: pixelated;
+    }
     /* margin: 4rem 6rem; */
 `
+
 type LayoutProps = {
     children: React.ReactNode;
 }
