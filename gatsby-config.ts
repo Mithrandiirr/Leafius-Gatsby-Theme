@@ -1,5 +1,5 @@
 import type { GatsbyConfig } from "gatsby";
-
+require('dotenv').config()
 const config: GatsbyConfig = {
   siteMetadata: {
     title: "El Yaakoubi Mohammed",
@@ -18,6 +18,14 @@ const config: GatsbyConfig = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         icon: 'src/images/icon.png',
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `c2scg6kzpwzi`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
     {

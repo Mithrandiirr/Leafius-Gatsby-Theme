@@ -86,7 +86,7 @@ const Header = () => {
       <Logo />
       <ListItems>
         <li>
-          <Link to='#about-me'>About me</Link>
+          <Link to='/'>About me</Link>
         </li>
         <li>
           <Link to='/projects'>Projects</Link>

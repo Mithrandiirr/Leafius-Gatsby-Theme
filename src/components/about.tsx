@@ -46,7 +46,7 @@ position: relative;
     height: 14px;
     top: 10px;
     z-index: -1;
-    background: rgb(168 171 5 / 63%);
+    background: rgb(247 219 20 / 63%);
     @media screen and (max-width:1268px)  {
         top: 58px;
     left: -509px;

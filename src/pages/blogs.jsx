@@ -1,8 +1,10 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { graphql, useStaticQuery } from 'gatsby'
-import { css } from '@emotion/react'
+import Layout from "../components/layout"
+import Seo from '../components/seo'
+
 const BlogsSection = styled.section`
     margin: 4rem 6rem;
     @media screen and (max-width:575px) {
@@ -35,12 +37,7 @@ const DateBlog = styled.h3`
     font-size: 1.5rem;
     margin-bottom: 0;
 `
-const Title = styled.h1`
-        color: white;
-        font-size: 2rem;
-        text-transform:uppercase;
-        letter-spacing: 5px;
-`
+
 const TitleBlog = styled.h1`
     font-size:2rem;
     color:white;
@@ -57,11 +54,8 @@ const BlogText = styled.div`
    
 `
 const Gatsby = styled.h2`
-
-        color:#734B9F;
         font-size:1.8rem;
         font-weight: 300;
-
 `
 const TimeReading = styled.h3`
     color:white;
@@ -92,40 +86,50 @@ const Btn = styled.button`
         padding: 0.4rem 0.5rem;
     }
 `
-const Laravel = styled.h2`
-        font-size:1.8rem;
-        font-weight: 300;
-        color:#E99393;
-`
-const BlogArea = styled.div`
-display:block;
-`
-function Blogs() {
-    const {allContentfulBlogs} = useStaticQuery(
-        graphql`
-          query{
-            allContentfulBlogs(filter: {latest: {eq: true}}){
-            nodes{
-              title
-              date
-              read
-              tag
-              picture{
-                gatsbyImageData
-              }
-              color
-            }
+const Title = styled.h1`
+  color:white;
+  font-size:2rem;
+  margin:6rem 6rem;
+  margin-bottom:-4rem;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  @media screen and (max-width:575px) {
+        margin:6rem 4rem;
+        margin-bottom:-4rem;
           }
-        }
-        `
-    )
-  return (
-    <BlogsSection>
+          @media screen and (max-width:440px) {
+        margin:6rem 1rem;
+        margin-bottom:-4rem;
+          }
+`
 
-        <Title>Latest Blogs</Title>
-        {allContentfulBlogs.nodes.map(node => (
+function BlogsIndex() {
+  const {allContentfulBlogs} = useStaticQuery(
+    graphql`
+      query{
+        allContentfulBlogs{
+        nodes{
+          title
+          date
+          read
+          tag
+          picture{
+            gatsbyImageData
+          }
+          color
+        }
+      }
+    }
+    `
+  )
+  return (
+    <Layout>
+      <Seo title='El Yaakoubi Mohammed - Blogs' />
+      <Title >Blogs</Title>
+    <BlogsSection>
+      {allContentfulBlogs.nodes.map(node => (
 <>
-<Blog>
+        <Blog>
             <BlogImage>
             <DateBlog>{node.date}</DateBlog>
             <GatsbyImage image={node.picture.gatsbyImageData} alt='Blog' />
@@ -144,12 +148,14 @@ function Blogs() {
                 </ButtonBlog>
             </BlogText>
         </Blog>
-  </>
-        ))}
-       
+</>
+      ))}
+        
+  
        
     </BlogsSection>
+    </Layout>
   )
 }
 
-export default Blogs
+export default BlogsIndex

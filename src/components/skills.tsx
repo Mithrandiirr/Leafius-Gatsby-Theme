@@ -32,6 +32,9 @@ const SkillsDiv = styled.ul`
     @media screen and (max-width:365px) {
         font-size: 1rem;
     }
+    @media screen and (max-width:280px) {
+        font-size: 0.8rem;
+    }
     }
 
 `
